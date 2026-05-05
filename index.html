@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Tabbed Website | Portfolio</title>
+    <meta name="description" content="A simple yet premium tabbed website created for a college submission.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <h1>Modern Experience</h1>
+        <p>A simple tabbed interface for college submission</p>
+    </header>
+
+    <nav class="tabs-container">
+        <button class="tab-link active" onclick="openTab(event, 'home')" id="defaultOpen">Home</button>
+        <button class="tab-link" onclick="openTab(event, 'about')">About</button>
+        <button class="tab-link" onclick="openTab(event, 'services')">Services</button>
+        <button class="tab-link" onclick="openTab(event, 'contact')">Contact</button>
+    </nav>
+
+    <main class="content-container">
+        <section id="home" class="tab-content show">
+            <h2>Welcome to My Project</h2>
+            <p>This is the home section of our tabbed website. It's designed to be clean, fast, and easy to navigate.</p>
+            <div class="card">
+                <h3>Highlights</h3>
+                <ul>
+                    <li>Minimal Code</li>
+                    <li>Responsive Design</li>
+                    <li>Premium Aesthetics</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="about" class="tab-content">
+            <h2>About Us</h2>
+            <p>We are focused on learning web development using HTML and CSS. This project demonstrates basic layout techniques and tabbed navigation.</p>
+        </section>
+
+        <section id="services" class="tab-content">
+            <h2>Our Services</h2>
+            <p>Explore what we can do for you. From simple landing pages to complex web applications.</p>
+            <div class="grid">
+                <div class="card">Web Design</div>
+                <div class="card">Development</div>
+                <div class="card">SEO</div>
+            </div>
+        </section>
+
+        <section id="contact" class="tab-content">
+            <h2>Contact Me</h2>
+            <p>Feel free to reach out for any inquiries regarding this project.</p>
+            <form class="simple-form">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea placeholder="Your Message" rows="4"></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Student Project. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function openTab(evt, tabName) {
+            // Hide all tab content
+            const tabContent = document.getElementsByClassName("tab-content");
+            for (let i = 0; i < tabContent.length; i++) {
+                tabContent[i].classList.remove("show");
+            }
+
+            // Remove active class from all tab links
+            const tabLinks = document.getElementsByClassName("tab-link");
+            for (let i = 0; i < tabLinks.length; i++) {
+                tabLinks[i].classList.remove("active");
+            }
+
+            // Show current tab and add active class to button
+            document.getElementById(tabName).classList.add("show");
+            evt.currentTarget.classList.add("active");
+        }
+    </script>
+</body>
+</html>
